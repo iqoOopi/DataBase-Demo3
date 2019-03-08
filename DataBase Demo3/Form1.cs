@@ -29,6 +29,10 @@ namespace DataBase_Demo3
         {
             // TODO: This line of code loads data into the 'mMABooksDataSet1.States' table. You can move, or remove it, as needed.
             this.statesTableAdapter.Fill(this.mMABooksDataSet1.States);
+            // TODO: This line of code loads data into the 'mMABooksDataSet1.Invoices' table. You can move, or remove it, as needed.
+            this.invoicesTableAdapter.Fill(this.mMABooksDataSet.Invoices);
+            // TODO: This line of code loads data into the 'mMABooksDataSet1.States' table. You can move, or remove it, as needed.
+            this.statesTableAdapter.Fill(this.mMABooksDataSet.States);
             // TODO: This line of code loads data into the 'mMABooksDataSet.Customers' table. You can move, or remove it, as needed.
             this.customersTableAdapter.Fill(this.mMABooksDataSet.Customers);
 

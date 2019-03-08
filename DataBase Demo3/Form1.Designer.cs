@@ -53,15 +53,24 @@
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.customersBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.statesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.statesTableAdapter = new DataBase_Demo3.MMABooksDataSetTableAdapters.StatesTableAdapter();
+            this.invoicesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.invoicesTableAdapter = new DataBase_Demo3.MMABooksDataSetTableAdapters.InvoicesTableAdapter();
             this.customerIDLabel1 = new System.Windows.Forms.Label();
             this.nameTextBox = new System.Windows.Forms.TextBox();
             this.addressTextBox = new System.Windows.Forms.TextBox();
             this.cityTextBox = new System.Windows.Forms.TextBox();
-            this.stateComboBox = new System.Windows.Forms.ComboBox();
             this.zipCodeTextBox = new System.Windows.Forms.TextBox();
+            this.invoicesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.invoicesDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.mMABooksDataSet1 = new DataBase_Demo3.MMABooksDataSet();
-            this.statesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.statesTableAdapter = new DataBase_Demo3.MMABooksDataSetTableAdapters.StatesTableAdapter();
+            this.statesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             customerIDLabel = new System.Windows.Forms.Label();
             nameLabel = new System.Windows.Forms.Label();
             addressLabel = new System.Windows.Forms.Label();
@@ -72,8 +81,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customersBindingNavigator)).BeginInit();
             this.customersBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.mMABooksDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.statesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.invoicesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.invoicesBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.invoicesDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mMABooksDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.statesBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // mMABooksDataSet
@@ -222,10 +235,18 @@
             this.customersBindingNavigatorSaveItem.Text = "Save Data";
             this.customersBindingNavigatorSaveItem.Click += new System.EventHandler(this.customersBindingNavigatorSaveItem_Click);
             // 
+            // statesTableAdapter
+            // 
+            this.statesTableAdapter.ClearBeforeFill = true;
+            // 
+            // invoicesTableAdapter
+            // 
+            this.invoicesTableAdapter.ClearBeforeFill = true;
+            // 
             // customerIDLabel
             // 
             customerIDLabel.AutoSize = true;
-            customerIDLabel.Location = new System.Drawing.Point(35, 43);
+            customerIDLabel.Location = new System.Drawing.Point(239, 62);
             customerIDLabel.Name = "customerIDLabel";
             customerIDLabel.Size = new System.Drawing.Size(68, 13);
             customerIDLabel.TabIndex = 1;
@@ -234,16 +255,16 @@
             // customerIDLabel1
             // 
             this.customerIDLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.customersBindingSource, "CustomerID", true));
-            this.customerIDLabel1.Location = new System.Drawing.Point(109, 43);
+            this.customerIDLabel1.Location = new System.Drawing.Point(313, 62);
             this.customerIDLabel1.Name = "customerIDLabel1";
-            this.customerIDLabel1.Size = new System.Drawing.Size(366, 23);
+            this.customerIDLabel1.Size = new System.Drawing.Size(121, 23);
             this.customerIDLabel1.TabIndex = 2;
             this.customerIDLabel1.Text = "label1";
             // 
             // nameLabel
             // 
             nameLabel.AutoSize = true;
-            nameLabel.Location = new System.Drawing.Point(35, 72);
+            nameLabel.Location = new System.Drawing.Point(239, 91);
             nameLabel.Name = "nameLabel";
             nameLabel.Size = new System.Drawing.Size(38, 13);
             nameLabel.TabIndex = 3;
@@ -252,15 +273,15 @@
             // nameTextBox
             // 
             this.nameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.customersBindingSource, "Name", true));
-            this.nameTextBox.Location = new System.Drawing.Point(109, 69);
+            this.nameTextBox.Location = new System.Drawing.Point(313, 88);
             this.nameTextBox.Name = "nameTextBox";
-            this.nameTextBox.Size = new System.Drawing.Size(366, 20);
+            this.nameTextBox.Size = new System.Drawing.Size(121, 20);
             this.nameTextBox.TabIndex = 4;
             // 
             // addressLabel
             // 
             addressLabel.AutoSize = true;
-            addressLabel.Location = new System.Drawing.Point(35, 98);
+            addressLabel.Location = new System.Drawing.Point(239, 117);
             addressLabel.Name = "addressLabel";
             addressLabel.Size = new System.Drawing.Size(48, 13);
             addressLabel.TabIndex = 5;
@@ -269,15 +290,15 @@
             // addressTextBox
             // 
             this.addressTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.customersBindingSource, "Address", true));
-            this.addressTextBox.Location = new System.Drawing.Point(109, 95);
+            this.addressTextBox.Location = new System.Drawing.Point(313, 114);
             this.addressTextBox.Name = "addressTextBox";
-            this.addressTextBox.Size = new System.Drawing.Size(366, 20);
+            this.addressTextBox.Size = new System.Drawing.Size(121, 20);
             this.addressTextBox.TabIndex = 6;
             // 
             // cityLabel
             // 
             cityLabel.AutoSize = true;
-            cityLabel.Location = new System.Drawing.Point(35, 124);
+            cityLabel.Location = new System.Drawing.Point(239, 143);
             cityLabel.Name = "cityLabel";
             cityLabel.Size = new System.Drawing.Size(27, 13);
             cityLabel.TabIndex = 7;
@@ -286,36 +307,24 @@
             // cityTextBox
             // 
             this.cityTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.customersBindingSource, "City", true));
-            this.cityTextBox.Location = new System.Drawing.Point(109, 121);
+            this.cityTextBox.Location = new System.Drawing.Point(313, 140);
             this.cityTextBox.Name = "cityTextBox";
-            this.cityTextBox.Size = new System.Drawing.Size(366, 20);
+            this.cityTextBox.Size = new System.Drawing.Size(121, 20);
             this.cityTextBox.TabIndex = 8;
             // 
             // stateLabel
             // 
             stateLabel.AutoSize = true;
-            stateLabel.Location = new System.Drawing.Point(35, 150);
+            stateLabel.Location = new System.Drawing.Point(239, 169);
             stateLabel.Name = "stateLabel";
             stateLabel.Size = new System.Drawing.Size(35, 13);
             stateLabel.TabIndex = 9;
             stateLabel.Text = "State:";
             // 
-            // stateComboBox
-            // 
-            this.stateComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.customersBindingSource, "State", true));
-            this.stateComboBox.DataSource = this.statesBindingSource;
-            this.stateComboBox.DisplayMember = "StateName";
-            this.stateComboBox.FormattingEnabled = true;
-            this.stateComboBox.Location = new System.Drawing.Point(109, 147);
-            this.stateComboBox.Name = "stateComboBox";
-            this.stateComboBox.Size = new System.Drawing.Size(366, 21);
-            this.stateComboBox.TabIndex = 10;
-            this.stateComboBox.ValueMember = "StateCode";
-            // 
             // zipCodeLabel
             // 
             zipCodeLabel.AutoSize = true;
-            zipCodeLabel.Location = new System.Drawing.Point(35, 177);
+            zipCodeLabel.Location = new System.Drawing.Point(239, 196);
             zipCodeLabel.Name = "zipCodeLabel";
             zipCodeLabel.Size = new System.Drawing.Size(53, 13);
             zipCodeLabel.TabIndex = 11;
@@ -324,30 +333,85 @@
             // zipCodeTextBox
             // 
             this.zipCodeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.customersBindingSource, "ZipCode", true));
-            this.zipCodeTextBox.Location = new System.Drawing.Point(109, 174);
+            this.zipCodeTextBox.Location = new System.Drawing.Point(313, 193);
             this.zipCodeTextBox.Name = "zipCodeTextBox";
-            this.zipCodeTextBox.Size = new System.Drawing.Size(366, 20);
+            this.zipCodeTextBox.Size = new System.Drawing.Size(121, 20);
             this.zipCodeTextBox.TabIndex = 12;
+            // 
+            // invoicesBindingSource1
+            // 
+            this.invoicesBindingSource1.DataMember = "FK_Invoices_Customers";
+            this.invoicesBindingSource1.DataSource = this.customersBindingSource;
+            // 
+            // invoicesDataGridView
+            // 
+            this.invoicesDataGridView.AutoGenerateColumns = false;
+            this.invoicesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.invoicesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4});
+            this.invoicesDataGridView.DataSource = this.invoicesBindingSource1;
+            this.invoicesDataGridView.Location = new System.Drawing.Point(168, 245);
+            this.invoicesDataGridView.Name = "invoicesDataGridView";
+            this.invoicesDataGridView.Size = new System.Drawing.Size(300, 220);
+            this.invoicesDataGridView.TabIndex = 13;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "InvoiceID";
+            this.dataGridViewTextBoxColumn1.HeaderText = "InvoiceID";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "CustomerID";
+            this.dataGridViewTextBoxColumn2.HeaderText = "CustomerID";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "InvoiceDate";
+            this.dataGridViewTextBoxColumn3.HeaderText = "InvoiceDate";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "InvoiceTotal";
+            this.dataGridViewTextBoxColumn4.HeaderText = "InvoiceTotal";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.customersBindingSource, "State", true));
+            this.comboBox1.DataSource = this.statesBindingSource1;
+            this.comboBox1.DisplayMember = "StateName";
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(313, 166);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 14;
+            this.comboBox1.ValueMember = "StateCode";
             // 
             // mMABooksDataSet1
             // 
             this.mMABooksDataSet1.DataSetName = "MMABooksDataSet";
             this.mMABooksDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // statesBindingSource
+            // statesBindingSource1
             // 
-            this.statesBindingSource.DataMember = "States";
-            this.statesBindingSource.DataSource = this.mMABooksDataSet1;
-            // 
-            // statesTableAdapter
-            // 
-            this.statesTableAdapter.ClearBeforeFill = true;
+            this.statesBindingSource1.DataMember = "States";
+            this.statesBindingSource1.DataSource = this.mMABooksDataSet1;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 496);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.invoicesDataGridView);
             this.Controls.Add(customerIDLabel);
             this.Controls.Add(this.customerIDLabel1);
             this.Controls.Add(nameLabel);
@@ -357,7 +421,6 @@
             this.Controls.Add(cityLabel);
             this.Controls.Add(this.cityTextBox);
             this.Controls.Add(stateLabel);
-            this.Controls.Add(this.stateComboBox);
             this.Controls.Add(zipCodeLabel);
             this.Controls.Add(this.zipCodeTextBox);
             this.Controls.Add(this.customersBindingNavigator);
@@ -369,8 +432,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.customersBindingNavigator)).EndInit();
             this.customersBindingNavigator.ResumeLayout(false);
             this.customersBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.mMABooksDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.statesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.invoicesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.invoicesBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.invoicesDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mMABooksDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.statesBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -395,15 +462,24 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton customersBindingNavigatorSaveItem;
+        private System.Windows.Forms.BindingSource statesBindingSource;
+        private MMABooksDataSetTableAdapters.StatesTableAdapter statesTableAdapter;
+        private System.Windows.Forms.BindingSource invoicesBindingSource;
+        private MMABooksDataSetTableAdapters.InvoicesTableAdapter invoicesTableAdapter;
         private System.Windows.Forms.Label customerIDLabel1;
         private System.Windows.Forms.TextBox nameTextBox;
         private System.Windows.Forms.TextBox addressTextBox;
         private System.Windows.Forms.TextBox cityTextBox;
-        private System.Windows.Forms.ComboBox stateComboBox;
         private System.Windows.Forms.TextBox zipCodeTextBox;
+        private System.Windows.Forms.BindingSource invoicesBindingSource1;
+        private System.Windows.Forms.DataGridView invoicesDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.ComboBox comboBox1;
         private MMABooksDataSet mMABooksDataSet1;
-        private System.Windows.Forms.BindingSource statesBindingSource;
-        private MMABooksDataSetTableAdapters.StatesTableAdapter statesTableAdapter;
+        private System.Windows.Forms.BindingSource statesBindingSource1;
     }
 }
 
